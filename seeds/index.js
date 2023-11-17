@@ -22,6 +22,7 @@ const seedDB = async () => {
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`
         });
+        //const c = new Campground({title: New York}) // to see is it working 
         await camp.save();
     }
 }
