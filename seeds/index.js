@@ -25,6 +25,7 @@ const seedDB = async () => {
         await camp.save();
     }
 }
+//seedDB() to run the mongo database to randomly create 50 camp names
 
 seedDB().then(() => {
     mongoose.connection.close();
