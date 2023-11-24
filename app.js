@@ -45,10 +45,14 @@ app.get('/campgrounds', async (req, res) => {
 app.get('/campgrounds/new', (req, res) => {
     res.render('campgrounds/new')
 });
-app.post('/campgrounds', async (req, res) => {
-    const campground = new Campground(req.body.campground);
-    await campground.save();
-    res.redirect(`/campgrounds/${campground._id}`)
+app.post('/campgrounds', async (req, res, next) => {
+    try{
+        const campground = new Campground(req.body.campground);
+        await campground.save();
+        res.redirect(`/campgrounds/${campground._id}`);
+    } catch(e){
+        next(e);
+    }
 });
 
 
@@ -72,6 +76,10 @@ app.delete('/campgrounds/:id', async (req, res) => {
     const { id } = req.params;
     await Campground.findByIdAndDelete(id);
     res.redirect(`/campgrounds`)
+});
+
+app.use((err, req, res, next) => {
+    res.send('OH BOY, SOMETHING WENT WROING!')
 })
 
 app.listen(3000, () => {
