@@ -7,7 +7,9 @@ const Campground = require('./models/campground');
 // const campground = require('./models/campground');
 // const { checkPrimeSync } = require('crypto');
 
+
 // Connection string to MongoDB Atlas
+
 mongoose.connect('mongodb+srv://jun:F40SItAr5VSqebxJ@sparkcodeacademy.xxtvoj7.mongodb.net/junDB?retryWrites=true&w=majority')
 
 // mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp');
