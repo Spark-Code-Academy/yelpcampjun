@@ -129,6 +129,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-.breakpoints
-.replit
-replit.nix
+*.breakpoints
+*.replit
+replit.nix*
+*.upm
