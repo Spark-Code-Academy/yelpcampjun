@@ -133,3 +133,4 @@ dist
 *.replit
 replit.nix*
 *.upm
+*.DS_Store
