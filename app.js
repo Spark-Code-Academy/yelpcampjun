@@ -8,11 +8,8 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 
-
 const ExpressError = require('./utils/ExpressError');
 
-const Campground = require('./models/campground');
-const Review = require('./models/review');
 const User = require('./models/user')
 
 const campgroundRoutes = require('./routes/campgrounds');
@@ -69,12 +66,6 @@ app.use((req, res, next) => {
   next();
 })
 
-// app.get('/fakeUser', async (req, res) => {
-//   const user = new User({email:'colttt@gmail.com', username: 'colttt'});
-//   const newUser = await User.register(user, 'chicken');
-//   res.send(newUser)
-// })
-
 app.use('/campgrounds', campgroundRoutes);
 app.use ('/campgrounds/:id/reviews', reviewRoutes);
 app.use('/', userRoutes);
@@ -83,7 +74,6 @@ app.use('/', userRoutes);
 app.get('/', (req, res) => {
   res.render('home')
 });
-
 
 
 app.all('*', (req, res, next) => {
