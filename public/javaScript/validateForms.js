@@ -1,6 +1,9 @@
             // Example starter JavaScript for disabling form submissions if there are invalid fields
             (function() {
                 'use strict'
+
+                bsCustomFileInput.init()
+                //this is for show how much file you has been upload
               
                 // Fetch all the forms we want to apply custom Bootstrap validation styles to
                 const forms = document.querySelectorAll('.validated-form')
@@ -20,3 +23,5 @@
               })()
               
               //eventlistener: when we have the submit action, it will check the validation
+
+
